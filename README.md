@@ -282,7 +282,12 @@ When broken down by carrier during weeks 11 and 12, TransLink Express missed 2 o
 - [ ] Incorporate a cost model to translate fill rate drops into dollar impact, making recommendations more actionable for finance stakeholders
 - [ ] Build a live Tableau dashboard connected directly to MySQL rather than static CSV exports
 
----
+--- 
+## Dashboard
+
+[View the interactive Tableau dashboard here](https://public.tableau.com/app/profile/jesus.ayala8733/viz/PhoenixLARouteFillRateAnomalyInvestigation/Dashboard1)
+
+![Dashboard Preview](visualizations/tableau_dashboard.png)
 
 ## 13. Deliverables
 
@@ -294,7 +299,7 @@ When broken down by carrier during weeks 11 and 12, TransLink Express missed 2 o
 | Volume vs. Carrier Query | Decomposition of anomaly into forecast error and missed pickups | [`/sql/task3_volume_vs_carrier.sql`] |
 | Carrier Breakdown Query | Missed pickups by carrier during anomaly week | [`/sql/task4_carrier_breakdown.sql`] |
 | Excel Analysis | Pivot tables and line charts from exported query results | [`/data/`] [`/visualizations/`] |
-| Tableau Dashboard | Interactive fill rate and carrier performance dashboard | [`/visualizations/`] |
+| Tableau Dashboard | Interactive fill rate and carrier performance dashboard | [View Live Dashboard](https://public.tableau.com/app/profile/jesus.ayala8733/viz/PhoenixLARouteFillRateAnomalyInvestigation/Dashboard1) |
 
 ---
 
