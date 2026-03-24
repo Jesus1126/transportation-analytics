@@ -41,7 +41,7 @@
 
 **Approach:** A simulated MySQL database of 900 shipments across 5 routes and 90 days was constructed to mirror real Middle Mile operations. SQL queries were used to establish a baseline, identify the anomaly week, and isolate the root cause at the carrier level. Findings were visualized in Excel and Tableau.
 
-**Outcome:** *To be updated after completing full analysis.*
+**Outcome:** Analysis identified a demand forecasting failure as the root cause of the fill rate anomaly during weeks 11 and 12, with actual volume exceeding forecast by up to 111 units. A secondary finding revealed two carriers — TransLink Express and Desert Road Freight — with missed pickup rates of 50% and 38% respectively during the affected period, representing an independent operational risk.
 
 ---
 
@@ -237,28 +237,24 @@ This project follows a root cause analysis (RCA) approach — starting broad wit
 
 ## 9. Key Insights
 
-> *To be completed after finishing SQL analysis tasks*
-
 **Insight 1: Fill rate anomaly concentrated in weeks 11–12**
 Fill rate on the Phoenix → LA route spiked to 1.05 and 1.08 during weeks 11 and 12, compared to a 13-week baseline of approximately 0.97. A fill rate above 1.0 indicates actual volume exceeded forecast — meaning more packages arrived at the dock than carriers were prepared to handle.
 
-**Insight 2: [Volume vs. Carrier Finding]**
-*To be updated after Task 3*
+**Insight 2: The root cause was a volume forecasting failure, not carrier underperformance**
+Actual volume exceeded forecast by 65 units in week 11 and 111 units in week 12 — the only weeks in the dataset where actual volume surpassed forecast. Carrier missed pickup rates during these weeks (0.14 and 0.21) were consistent with several earlier weeks, confirming that carriers were not the primary driver of the anomaly.
 
-**Insight 3: [Carrier Responsible]**
-*To be updated after Task 4*
+**Insight 3: Two carriers showed poor reliability when exposed to the volume surge**
+When broken down by carrier during weeks 11 and 12, TransLink Express missed 2 of 4 scheduled pickups (50% missed rate) and Desert Road Freight missed 3 of 8 (38% missed rate). PeakMove, SwiftHaul, and NorthStar completed all scheduled pickups under the same conditions. This is a secondary finding — carrier reliability did not cause the anomaly but represents an independent operational risk.
 
 ---
 
 ## 10. Recommendations
 
-> *To be completed after finishing SQL analysis tasks*
-
 | Priority | Recommendation | Based On | Suggested Owner |
 |----------|---------------|----------|-----------------|
-| High | *To be updated* | Insight 3 — carrier performance | Transportation Operations |
-| Medium | *To be updated* | Insight 2 — volume forecast error | Supply Chain Planning |
-| Low | Build automated weekly fill rate alerting to flag anomalies before leadership escalation | Insight 1 — anomaly went undetected until leadership flagged it | Analytics / BI Team |
+| High | Review the demand forecasting model for the Phoenix → LA route to determine why volume was underestimated two weeks consecutively | Insight 2 — actual volume exceeded forecast by up to 111 units | Supply Chain Planning |
+| Medium | Conduct a reliability review of TransLink Express and Desert Road Freight — a 50% and 38% missed pickup rate respectively suggests these carriers may not be suitable for high-demand periods | Insight 3 — carrier breakdown during anomaly weeks | Transportation Operations |
+| Low | Build automated weekly fill rate alerting to flag anomalies before they reach leadership escalation | Insight 1 — anomaly went undetected until leadership flagged it | Analytics / BI Team |
 
 ---
 
