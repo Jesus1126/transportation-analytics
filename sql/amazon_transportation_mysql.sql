@@ -1,6 +1,3 @@
--- Amazon Transportation Analyst Practice Database
--- Run this file in MySQL Workbench to set up your database
-
 DROP DATABASE IF EXISTS amazon_transportation;
 CREATE DATABASE amazon_transportation;
 USE amazon_transportation;
@@ -12,7 +9,7 @@ CREATE TABLE routes (
     distance_miles INT,
     expected_transit_days INT
 );
-
+carrier_pickups
 CREATE TABLE carriers (
     carrier_id VARCHAR(10) PRIMARY KEY,
     carrier_name VARCHAR(50),
@@ -1858,5 +1855,3 @@ INSERT INTO carrier_pickups VALUES ('PKP00897', 'SHP00897', 'CR001', '2026-03-31
 INSERT INTO carrier_pickups VALUES ('PKP00898', 'SHP00898', 'CR004', '2026-03-31 09:00:00', '2026-03-31 10:00:00', 0);
 INSERT INTO carrier_pickups VALUES ('PKP00899', 'SHP00899', 'CR004', '2026-03-31 07:00:00', '2026-03-31 08:00:00', 0);
 INSERT INTO carrier_pickups VALUES ('PKP00900', 'SHP00900', 'CR002', '2026-03-31 07:00:00', '2026-03-31 07:00:00', 0);
-
--- Done! You can now query the database.
